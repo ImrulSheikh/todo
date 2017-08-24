@@ -2,5 +2,25 @@
   "name": "todo-backend",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "prestart": "npm-run-all --parallel security-check",
+    "start": "npm-run-all --parallel server:run",
+    "server:run": "babel-node index.js",
+    "security-check": "nsp check"
+  },
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.5.0",
+    "eslint-plugin-prettier": "^2.2.0",
+    "npm-run-all": "^4.0.2",
+    "nsp": "^2.7.0",
+    "open": "^0.0.5",
+    "prettier": "^1.5.3"
+  }
 }
